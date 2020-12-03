@@ -1,13 +1,32 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Sura&display=swap');
+
+:root {
+  --primaryColor: rgb(23, 32, 42 );
+  --secondaryColor: rgb(93, 173, 226) ;
+  --lightColor: rgb(214, 234, 248 );
+  --darkColor: rgb(27, 79, 114);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Sura', sans-serif;
+}
+
+body {
+  color: var(--primaryColor);
+  /* background-color: var(--secondaryColor); */
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
 }

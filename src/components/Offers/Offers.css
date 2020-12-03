@@ -1,0 +1,27 @@
+.offers__container {
+    background-color: var(--lightColor);
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.offers__container h1 {
+    color: var(--primaryColor);
+    font-weight: bold;
+    padding-bottom: 50px;
+}
+
+.offers__container--wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* .offers__container--wrapper {
+    padding: 10px 10px;
+    width: 100px
+} */

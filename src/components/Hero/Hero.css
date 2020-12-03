@@ -1,0 +1,86 @@
+.hero__container {
+    background-color: var(--darkColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.hero__container:before {
+    content: '';
+    z-index: -1;
+    position: absolute;        
+    top: 0;
+    left: 0;
+    right: 0;        
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.2) 100%),linear-gradient(180deg, rgba(0,0,0,0.1) 0%, transparent 100%);
+} 
+
+.hero__background {
+    background-image: url('../../assets/images/beach2.jpg');
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -2;
+} 
+
+/* .hero__video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: 3;
+} */
+
+.hero__box__big {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 10px;
+    margin: 20px 20px;
+    border: 10px  var(--primaryColor) solid;
+    border-radius: 10px;
+}
+
+.hero__box__small {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 50px;
+    margin: 30px 30px;
+    border: 6px   rgba(256, 256, 256, 0.7) solid;
+    border-radius: 10px;
+}
+
+.hero__box__small h1, h2 {
+    color: var(--primaryColor);
+    font-weight: bold;
+}
+
+
+.hero__register--btn {
+    margin: 15px 0 0 0;
+    padding: 10px 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color:  #0A0A2A;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px #0A0A2A solid;
+    cursor: pointer;
+}
+
+.hero__register--btn:hover {
+     background-color:  #0A0A2A;
+     color: rgba(214, 234, 248, 0.9);
+     transform: scale(1.1);
+     transition: 0.2s all ease-in-out;
+}
+

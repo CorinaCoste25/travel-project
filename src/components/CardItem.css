@@ -1,0 +1,12 @@
+.card__container {
+    margin: 20px;
+    padding: 30px 10px;
+    /* max-width: 400px; */
+    width: 300px;
+    transition: transform 0.2s ease-in;
+}
+
+.card__container:hover {
+    box-shadow: 0 3px 10px rgba(93, 173, 226, 0.7);
+    transform: translateY(-15px);
+}
