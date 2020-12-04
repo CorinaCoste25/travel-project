@@ -2,7 +2,19 @@ import React from 'react';
 
 import './InfoSection.css';
 
-const InfoSection = ({ id, lightBg, lightText, lightDesc, title, headline, description, imgStart, image, alt }) => {
+const InfoSection = ({ id, lightBg, lightText, title, headline, description, imgStart, image, alt }) => {
+
+    const myList = description.split('&');
+    console.log(myList);
+
+    const showDescription = (array) => {
+        if(array.length === 1) {
+            return description;
+        } else {
+            return array.map(item => {return <li key={item}>{item}</li>});
+        }
+    }
+
     return (
         <React.Fragment>
             <div className="info__container"  
@@ -14,7 +26,9 @@ const InfoSection = ({ id, lightBg, lightText, lightDesc, title, headline, descr
                             <div className="info__col1">
                                 <h1 style={{color: lightText ? '#fff' : 'rgb(23, 32, 42 )'}}>{title}</h1>
                                 <h2 style={{color: lightText ? '#fff' : 'rgb(23, 32, 42 )'}}>{headline}</h2>
-                                <p style={{color: lightText ? '#fff' : 'rgb(23, 32, 42 )'}}>{description}</p>
+                                <p style={{color: lightText ? '#fff' : 'rgb(23, 32, 42 )'}}>
+                                    {showDescription(myList)}
+                                </p>
                             </div>
                         </div>
                         <div className="col">

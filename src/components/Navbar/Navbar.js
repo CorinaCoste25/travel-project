@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {TiAnchor} from 'react-icons/ti';
+import { MdAirplanemodeActive } from 'react-icons/md';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
@@ -32,7 +32,7 @@ const Navbar = () => {
                 <div className="nav__container">
                     <Link to="/" className="nav__logo" onClick={closeMobileMenu}>
                         Travel
-                        <TiAnchor size={44}/>
+                        <MdAirplanemodeActive size={32}/>
                     </Link>
                 </div>
                 <nav className="nav__container">
@@ -52,7 +52,7 @@ const Navbar = () => {
                         </li>
                         <li className="nav__item">
                             <Link to="/" className="nav__link" onClick={closeMobileMenu}>
-                                Packages
+                                Offers
                             </Link>
                         </li>
 

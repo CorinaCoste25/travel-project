@@ -16,6 +16,8 @@ const Offers = () => {
                         <CardItem {...offer2} />
                         <CardItem {...offer3} />
                 </div>
+                <h3>If you would like to know more about our offers please register now by clicking here!</h3>
+                <button className="hero__register--btn">Register Now</button>
             </div>
         </React.Fragment>
     );
