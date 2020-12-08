@@ -28,6 +28,9 @@
     height: 100vh;
     overflow: hidden;
     z-index: -2;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
 } 
 
 /* .hero__video {

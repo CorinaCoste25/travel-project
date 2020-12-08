@@ -4,6 +4,7 @@ import Hero from '../../components/Hero/Hero';
 import InfoSection from '../../components/InfoSection/InfoSection';
 import { infoAbout, infoDestinations, contactInfo } from '../../components/InfoSection/Data';
 import Offers from '../../components/Offers/Offers';
+import Footer from '../../components/Footer/Footer';
 
 const Home = () => {
     return (
@@ -14,6 +15,7 @@ const Home = () => {
             <InfoSection {...infoDestinations} />
             <Offers />
             <InfoSection {...contactInfo} />
+            <Footer />
         </React.Fragment>
     );
 }

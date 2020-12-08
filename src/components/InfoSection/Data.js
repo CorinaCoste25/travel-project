@@ -12,7 +12,7 @@ export const infoAbout = {
 }
 
 export const infoDestinations = {
-    id: "about",
+    id: "about2",
     lightBg: false,
     lightText: true,
     lightDesc: true,

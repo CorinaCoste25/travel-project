@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import { MdAirplanemodeActive } from 'react-icons/md';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { Link as LinkScroll, animateScroll as scroll } from 'react-scroll';
 
 import './Navbar.css';
 import { IconContext } from 'react-icons/lib';
@@ -10,6 +11,19 @@ const Navbar = () => {
     
     const [ click, setClick] = useState(false);
     const [ button, setButton ] = useState(true);
+    const [ scrollNav, setScrollNav ] = useState(false);
+
+    const changeNav = () => {
+        if(window.scrollY >= 80) {
+            setScrollNav(true);
+        } else {
+            setScrollNav(false);
+        }
+    }
+
+    useEffect( () => {
+        window.addEventListener('scroll', changeNav)
+    }, []);
 
     const handleClick = () => setClick(!click);
 
@@ -28,7 +42,7 @@ const Navbar = () => {
     return (
         <React.Fragment>
         <IconContext.Provider value={{color: 'var(--primaryColor)'}} >
-            <div className="nav__main">
+            <div className="nav__main" scrollNav={scrollNav}>
                 <div className="nav__container">
                     <Link to="/" className="nav__logo" onClick={closeMobileMenu}>
                         Travel
@@ -41,28 +55,32 @@ const Navbar = () => {
                     </div>
                     <ul className={ click ? "nav__menu active" : "nav__menu" }>
                         <li className="nav__item">
-                            <Link to="/" className="nav__link" onClick={closeMobileMenu}>
+                        <Link to="/" >
+                            <LinkScroll to="hero" className="nav__link" onClick={closeMobileMenu} smooth={true} duration={500} spy={true} exact='true' offset={-80}>
                                 Home
-                            </Link>
+                            </LinkScroll>
+                        </Link>
                         </li>
                         <li className="nav__item">
-                            <Link to="/" className="nav__link" onClick={closeMobileMenu}>
+                            <LinkScroll to="about" className="nav__link" onClick={closeMobileMenu} smooth={true} duration={500} spy={true} exact='true' offset={-80}>
                                 Services
-                            </Link>
+                            </LinkScroll>
                         </li>
                         <li className="nav__item">
-                            <Link to="/" className="nav__link" onClick={closeMobileMenu}>
+                            <LinkScroll to="offers" className="nav__link" onClick={closeMobileMenu} smooth={true} duration={500} spy={true} exact='true' offset={-80}>
                                 Offers
-                            </Link>
+                            </LinkScroll>
                         </li>
 
                         <li className="nav__item">
-                            <Link to="/" className="nav__link" onClick={closeMobileMenu}>
+                            <LinkScroll to="contact" className="nav__link" onClick={closeMobileMenu} smooth={true} duration={500} spy={true} exact='true' offset={-80}>
                                 Contact
-                            </Link>
+                            </LinkScroll>
                         </li>
 
-                        <button className="nav__button" onClick={closeMobileMenu}>Register</button>
+                        <Link to="/form">
+                            <button className="nav__button"  onClick={closeMobileMenu}>Register</button>
+                        </Link> 
                     </ul>
 
                 

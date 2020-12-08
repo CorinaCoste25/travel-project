@@ -3,8 +3,6 @@ import { Card } from 'react-bootstrap';
 
 import './CardItem.css';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 const CardItem = ({ image, title, offers, price }) => {
 
     const myOffers = offers.split('&');
