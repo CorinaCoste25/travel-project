@@ -10,21 +10,14 @@ const Form = () => {
         setState(e.target.value);
     }
 
-    // handleSubmit = e => {
-    //     fetch("/", {
-    //         method: "POST",
-    //         headers: {"Content-Type": "application/x-wwww-form-urlencoded"},
-    //         body: encodeURI({"form-name": ""})
-    //     })
-    // }
-
     return(
         <React.Fragment>
         <div className="hero__container">
             <div className="hero__background">
             <div className="form__container--wrapper">
-                <h3>Please complete the information below to get more information</h3>
-                    <form>
+                <h3>Please complete the information below to get more detalies</h3>
+                    <form name="travel-info" action="/info" method="post">
+                        <input type="hidden" name="form-name" value="travel-info" />
                         <label>
                             Name 
                             <input type="text" name="name" placeholder="Your name" required onChange={changeInput}/>
@@ -46,7 +39,7 @@ const Form = () => {
                             <input type="date" name="to_date" />
                         </label>
                     </form>
-                <putton className="hero__register--btn">Submit</putton>
+                <button className="hero__register--btn" type="submit">Register Now</button>
             </div>
             </div>
         </div>

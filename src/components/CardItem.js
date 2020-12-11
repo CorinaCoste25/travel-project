@@ -5,18 +5,17 @@ import './CardItem.css';
 
 const CardItem = ({ image, title, offers, price }) => {
 
-    const myOffers = offers.split('&');
-    console.log(myOffers);
-
     return(
         <div className="card__container">
             <Card border='light' style={{width: '17rem'}}>
-                <Card.Img variant="top" src={image}/>
+                <div className="card__image--wrapper">
+                    <Card.Img className="card__image" variant="top" src={image}/>
+                </div>
                 <Card.Body>
                     <Card.Title style={{ fontSize: '2rem', fontWeight: 'bold'}}>{title}</Card.Title>
                     <Card.Text style={{ fontSize: '1.2rem', fontWeight: '300'}}>
                         <ul>
-                        { myOffers.map(item => {
+                        { offers.map(item => {
                             console.log(item);
                             return <li key={item}>{item}</li>
                         }) }

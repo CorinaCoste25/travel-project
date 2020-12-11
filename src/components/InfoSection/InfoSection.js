@@ -2,33 +2,32 @@ import React from 'react';
 
 import './InfoSection.css';
 
-const InfoSection = ({ id, lightBg, lightText, title, headline, description, imgStart, image, alt }) => {
-
-    const myList = description.split('&');
-    console.log(myList);
-
-    const showDescription = (array) => {
-        if(array.length === 1) {
-            return description;
-        } else {
-            return array.map(item => {return <li key={item}>{item}</li>});
-        }
-    }
+const InfoSection = ({ id, lightBg, lightText, title, headline, description, offersList, imgStart, image, alt }) => {
 
     return (
         <React.Fragment>
             <div className="info__container"  
-                style={{backgroundColor: lightBg ? 'rgb(214, 234, 248 )' : ' rgb(93, 173, 226)'}} id={id}>
+                style={{backgroundColor: JSON.parse(lightBg) ? 'rgb(214, 234, 248 )' : ' rgb(93, 173, 226)'}} id={id}>
                 <div className="info__wrapper">
                     <div className="info__row" 
-                        style={{display: 'flex', flexDirection: imgStart ? 'row' : 'row-reverse'}}>
+                        style={{display: 'flex', flexDirection: JSON.parse(imgStart) ? 'row' : 'row-reverse'}}>
                         <div className="col">
                             <div className="info__col1">
-                                <h1 style={{color: lightText ? '#fff' : 'rgb(23, 32, 42 )'}}>{title}</h1>
-                                <h2 style={{color: lightText ? '#fff' : 'rgb(23, 32, 42 )'}}>{headline}</h2>
-                                <p style={{color: lightText ? '#fff' : 'rgb(23, 32, 42 )'}}>
-                                    {showDescription(myList)}
-                                </p>
+                                <h1 style={{color: JSON.parse(lightText) ? '#fff' : 'rgb(23, 32, 42 )'}}>{title}</h1>
+                                <h2 style={{color: JSON.parse(lightText) ? '#fff' : 'rgb(23, 32, 42 )'}}>{headline}</h2>
+                                
+                                    { offersList ? (
+                                        <ul className="info__list" style={{listStyle: 'initial'}}>
+                                        {offersList.map( item => 
+                                            { return <li key={item} 
+                                                style={{color: JSON.parse(lightText) ? '#fff' : 'rgb(23, 32, 42 )'}}>
+                                                    {item}
+                                                </li>})}
+                                        </ul>
+                                    ) : 
+                                    (<p style={{color: JSON.parse(lightText) ? '#fff' : 'rgb(23, 32, 42 )'}}>{description}</p>)
+                                }
+                                
                             </div>
                         </div>
                         <div className="col">

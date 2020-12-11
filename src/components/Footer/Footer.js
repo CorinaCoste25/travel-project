@@ -12,7 +12,7 @@ const Footer = () => {
         <div className="footer__container">
             <section className="footer__container--social">
                 <div className="nav__container">
-                    <Link to="/" className="nav__logo">
+                    <Link to="/" className="nav__logo footer__logo">
                         Travel
                         <MdAirplanemodeActive size={32}/>
                     </Link>

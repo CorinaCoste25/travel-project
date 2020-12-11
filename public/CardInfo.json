@@ -1,0 +1,41 @@
+[
+    {
+        "id": "offer1",
+        "image": "./images/silver.png",
+        "title": "Silver",
+        "offers": [
+            "plane tickets",
+            "accomodation",
+            "travel insurance"
+        ],
+        "price": "37.99"
+    },
+
+    {
+        "id": "offer2",
+        "image": "./images/gold.png",
+        "title": "Gold",
+        "offers": [
+            "plane tickets",
+            "accomodation",
+            "travel insurance",
+            "trips"
+        ],
+        "price": "47.99"
+    },
+
+    {
+        "id": "offer3",
+        "image": "./images/diamond.png",
+        "title": "Diamond",
+        "offers": [
+            "plane tickets",
+            "accomodation",
+            "travel insurance",
+            "trips",
+            "meals"
+        ],
+        "price": "57.99"
+    }
+
+]

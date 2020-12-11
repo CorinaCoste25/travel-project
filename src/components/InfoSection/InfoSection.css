@@ -1,5 +1,5 @@
 .info__container {
-    padding: 70px 50px;  
+    padding: 70px 50px;
 }
 
 .info__wrapper {
@@ -7,50 +7,46 @@
 }
 
 .info__row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
-    /* align-content: stretch; */
 }
 
 .col {
-    /* margin-bottom: 20px;
-    margin-left: 20px;
-    margin-top: 20px; */
-    flex: 1;
-    flex-basis: 50%;
-    max-width: 50%;   
+    flex: inline-block;
+    justify-content: center;
+    align-self: center;
+    /* flex: 1;
+    flex-basis: 100%;
+    max-width: 100%;    */
 }
 
 .info__col1 {
     max-width: 600px;
-    padding-top: 0;
-    padding-left: 20px;
-    padding-bottom: 50px;
+    padding: 50px 30px;
 }
 
 .info__col2 {
     max-width: 500px;
-    padding-top: 0;
-    padding-bottom: 50px;
+    padding: 50px 30px;
 }
 
 .info__img--wrapper {
-    max-width: 95%;
-    margin-top: 0;
-    margin-right: 0;
-    margin-left: 10px;
-    padding-right: 0; 
+    margin: 0 10px;
 }
 
 .info__img {
-    border: 0;
-    max-width: 100%;
-    vertical-align: middle;
-    display: inline-block;
+    
     background-size: cover;
-    /* position: absolute; */
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    height: 100vh;
-    /* overflow: hidden;  */
+}
+
+.info__list {
+    padding: 40px;
 }
 
 .info__col1 h1 {

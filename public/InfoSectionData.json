@@ -1,0 +1,48 @@
+[
+    {
+        "id": "about",
+        "lightBg": "false",
+        "lightText": "true",
+        "title": "Let us help you",
+        "headline": "Travel around the world",
+        "description": "Our agency is ready to give you what you need to have the best holiday. If you want a snowy vacation, an exotic one or one for history and culture we can help find your perfect match. All over the world: from Asia to North Pole, from Paris to Puerto Rico and from Honk Kong to Maldives, there are never ending options. Check our destinations and offers. Feel free to contact us!",
+        "offersList": "",
+        "imgStart": "true",
+        "image": "./images/map.jpg",
+        "alt": "about_image"
+    },
+
+    
+    {
+        "id": "about2",
+        "lightBg": "true",
+        "lightText": "false",
+        "title": "Travel all over the world",
+        "headline": "Best offers, best services",
+        "description": "We can help you get your desired vacation wherever you wish. If you can't decide or you know for sure your perfect place to go, we can get you there or help you find it. On all continents, on all islands, in all countries. Best offers, best services. Assuring the safest way to travel is our main goal.",
+        "offersList": "",
+        "imgStart": "false",
+        "image": "./images/paris.jpg",
+        "alt": "destinations_image"
+    },
+
+    {
+        "id": "contact",
+        "lightBg": "false",
+        "lightText": "true",
+        "title": "We are here for you when all you wish for is an unforgettable trip",
+        "headline": "Please contact us for more information regarding:",
+        "description": "",
+        "offersList": [
+            "destinations available",
+            "help planning your trips",
+            "safe travelling",
+            "travelling with children",
+            "honeymoon specials",
+            "safety rules for travelling"
+        ],
+        "imgStart": "true",
+        "image": "./images/plane2.jpg",
+        "alt": "contact_image"
+    }
+]

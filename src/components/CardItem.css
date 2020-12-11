@@ -10,3 +10,14 @@
     box-shadow: 0 3px 10px rgba(93, 173, 226, 0.7);
     transform: translateY(-15px);
 }
+
+.card__image--wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card__image {
+    padding: 40px 40px 0 40px;
+    max-width: 180px;
+}
