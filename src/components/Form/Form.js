@@ -10,6 +10,10 @@ const Form = () => {
         setState(e.target.value);
     }
 
+    const handleSumbit = () => {
+        setState('');
+    }
+
     return(
         <React.Fragment>
         <div className="hero__container">
@@ -38,8 +42,11 @@ const Form = () => {
                             To date
                             <input type="date" name="to_date" />
                         </label>
+                        <button  className="hero__register--btn" 
+                                style={{width: '120px', marginLeft: '20px'}}
+                                type="submit" onSubmit={handleSumbit}>Submit</button>
                     </form>
-                <button className="hero__register--btn" type="submit">Register Now</button>
+                
             </div>
             </div>
         </div>
