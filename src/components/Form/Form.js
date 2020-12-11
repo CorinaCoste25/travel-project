@@ -20,7 +20,7 @@ const Form = () => {
             <div className="hero__background">
             <div className="form__container--wrapper">
                 <h3>Please complete the information below to get more detalies</h3>
-                    <form name="travel-info" action="/info" method="post">
+                    <form name="travel-info" method="post">
                         <input type="hidden" name="form-name" value="travel-info" />
                         <label>
                             Name 
