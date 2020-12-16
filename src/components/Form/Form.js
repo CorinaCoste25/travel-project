@@ -9,7 +9,9 @@ const Form = () => {
     const [ destination, setDestination ] = useState('');
 
     const handleSumbit = (e) => {
-        //e.preventDefault();
+        setName(e.target.name);
+        setFrom(e.target.from);
+        setDestination(e.target.destination);
     }
 
     const inputRef = useRef();
@@ -24,7 +26,7 @@ const Form = () => {
             <div className="hero__background">
             <div className="form__container--wrapper">
                 <h3>Please complete the information below to get more detalies</h3>
-                    <form name="travel-info" onSubmit={handleSumbit}>
+                    <form name="travel-info" >
                         <input type="hidden" method="post" name="form-name" value="travel-info" />
                         <label>
                             Name 
@@ -48,7 +50,7 @@ const Form = () => {
                         </label>
                         <button  className="hero__register--btn" 
                                 style={{width: '120px', marginLeft: '20px'}}
-                                type="submit">Submit</button>
+                                type="submit" onSubmit={handleSumbit}>Submit</button>
                     </form>
                 
             </div>
