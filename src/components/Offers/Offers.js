@@ -1,4 +1,5 @@
 import React, { useState, useEffect} from 'react';
+import { animateScroll as scroll } from 'react-scroll'; 
 
 import CardItem from '../CardItem';
 
@@ -18,6 +19,10 @@ const Offers = () => {
         const myData = await response.json();
         setData(myData);
     }
+    
+    const scrollToTop = () => {
+        scroll.scrollToTop();
+    };
 
     return (
         <React.Fragment>
@@ -39,7 +44,7 @@ const Offers = () => {
                 </div>
                 <h3>If you would like to know more about our offers please register now by clicking here!</h3>
                 <Link to="/form">
-                    <button className="hero__register--btn">Register Now</button>
+                    <button className="hero__register--btn" onClick={scrollToTop}>Register Now</button>
                 </Link>
             </div>
         </React.Fragment>

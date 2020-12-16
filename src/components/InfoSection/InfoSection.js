@@ -14,12 +14,6 @@ const InfoSection = ({ id, lightBg, lightText, title, headline, description, off
             flexDirection: isRowBased ? (img ? 'row' : 'row-reverse') : 'column',
             alignItems: 'center',
             justifyContent: 'center'
-        }),
-
-        column: () => ({
-            flex: 'display',
-            alignItems: 'center',
-            justifyContent: 'center'
         })
 
     };
@@ -31,7 +25,7 @@ const InfoSection = ({ id, lightBg, lightText, title, headline, description, off
                 <div className="info__wrapper" >
                     <div className="info__row" 
                         style={styles.container(isRowBased, JSON.parse(imgStart))}>
-                        <div className="col" style={styles.column()}>
+                        <div className="col" >
                             <div className="info__col1">
                                 <h1 style={{color: JSON.parse(lightText) ? '#fff' : 'rgb(23, 32, 42 )'}}>{title}</h1>
                                 <h2 style={{color: JSON.parse(lightText) ? '#fff' : 'rgb(23, 32, 42 )'}}>{headline}</h2>
@@ -46,11 +40,11 @@ const InfoSection = ({ id, lightBg, lightText, title, headline, description, off
                                         </ul>
                                     ) : 
                                     (<p style={{color: JSON.parse(lightText) ? '#fff' : 'rgb(23, 32, 42 )'}}>{description}</p>)
-                                }
+                                    }
                                 
                             </div>
                         </div>
-                        <div className="col" style={styles.column()}>
+                        <div className="col">
                             <div className="info__col2">
                                 <div className="info__img--wrapper">
                                     <img className="info__img" src={image} alt={alt} ></img>

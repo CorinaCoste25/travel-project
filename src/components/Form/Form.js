@@ -24,7 +24,7 @@ const Form = () => {
             <div className="hero__background">
             <div className="form__container--wrapper">
                 <h3>Please complete the information below to get more detalies</h3>
-                    <form name="travel-info" method="post" onSubmit={handleSumbit}>
+                    <form name="travel-info" onSubmit={handleSumbit}>
                         <input type="hidden" name="form-name" value="travel-info" />
                         <label>
                             Name 

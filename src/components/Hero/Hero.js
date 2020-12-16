@@ -15,8 +15,8 @@ const Hero = () => {
         <div className="hero__container" id="hero">
                 <div className="hero__background">       
                 </div>
-                <div className="hero__box__big">
-                    <div className="hero__box__small">
+                <div className="hero__box--big">
+                    <div className="hero__box--small">
                         <h1>Let go off the busy life and enjoy a stressfree vacation</h1>
                         <h2>For more of our travel offers register now</h2>
                         <Link to="/form">

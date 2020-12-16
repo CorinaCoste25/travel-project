@@ -7,7 +7,7 @@ const CardItem = ({ image, title, offers, price }) => {
 
     return(
         <div className="card__container">
-            <Card border='light' style={{width: '17rem'}}>
+            <Card border='light' >
                 <div className="card__image--wrapper">
                     <Card.Img className="card__image" variant="top" src={image}/>
                 </div>
@@ -22,7 +22,7 @@ const CardItem = ({ image, title, offers, price }) => {
                         </ul>
                     
                 </Card.Body>
-                <Card.Footer style={{ fontSize: '1.5rem', fontWeight: 'bold'}}>{price}</Card.Footer>
+                <Card.Footer style={{ fontSize: '1.5rem', fontWeight: 'bold'}}>${price}</Card.Footer>
             </Card>
         </div>
     );

@@ -23,7 +23,7 @@ const Home = () => {
         <React.Fragment>
             <Navbar />
             <Hero />
-            { data.map(info => {
+            { data.map( info => {
                 return( <InfoSection 
                     key={info.id}
                     id={info.id}

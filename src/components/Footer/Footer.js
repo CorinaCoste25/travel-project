@@ -18,6 +18,7 @@ const Footer = () => {
                     </Link>
                 </div>
                 <small className="webiste-rights">Travel © 2020</small>
+                { /* SOCIAL ICONS */}
                 <div className="footer__social--icons">
                     <Link
                         className='footer__social--icon-link'
@@ -26,6 +27,7 @@ const Footer = () => {
                         aria-label='Facebook'>
                         <FaFacebook />
                     </Link>
+
                     <Link
                         className='footer__social--icon-link'
                         to='/'
