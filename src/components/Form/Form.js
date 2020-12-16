@@ -25,7 +25,7 @@ const Form = () => {
             <div className="form__container--wrapper">
                 <h3>Please complete the information below to get more detalies</h3>
                     <form name="travel-info" onSubmit={handleSumbit}>
-                        <input type="hidden" name="form-name" value="travel-info" />
+                        <input type="hidden" method="post" name="form-name" value="travel-info" />
                         <label>
                             Name 
                             <input ref={inputRef} onChange={e => { setName(e.target.value) }} value={name} type="text" name="name" placeholder="Your name" required/>
