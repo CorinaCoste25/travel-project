@@ -2,7 +2,8 @@ import React, { useState, useEffect} from 'react';
 import { MdAirplanemodeActive } from 'react-icons/md';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import { Link as LinkScroll, animateScroll as scroll } from 'react-scroll';
+import { animateScroll as scroll } from 'react-scroll';
+import { HashLink } from 'react-router-hash-link';
 
 import './Navbar.css';
 import { IconContext } from 'react-icons/lib';
@@ -22,7 +23,13 @@ const Navbar = () => {
     }
 
     useEffect( () => {
+        window.addEventListener('resize', showButton);
         window.addEventListener('scroll', changeNav);
+
+        return () => {
+            window.removeEventListener('resize', showButton);
+            window.removeEventListener('scroll', changeNav);
+        }
     }, []);
 
     const handleClick = () => setClick(!click);
@@ -37,18 +44,15 @@ const Navbar = () => {
         }
     }
 
-    window.addEventListener('resize', showButton);
-
     const scrollToTop = () => {
         scroll.scrollToTop();
     };
 
-
     return (
         <React.Fragment>
         <IconContext.Provider value={{color: 'var(--primaryColor)'}} >
-            <nav className="nav__main" scrollNav={scrollNav} onClick={scrollToTop}>
-                <div className="nav__container">
+            <nav className="nav__main" >
+                <div className="nav__container" onClick={scrollToTop}>
                     <Link to="/" className="nav__logo" onClick={closeMobileMenu}>
                         Travel
                         <MdAirplanemodeActive size={32}/>
@@ -61,31 +65,31 @@ const Navbar = () => {
                     <ul className={ click ? "nav__menu active" : "nav__menu" }>
 
                         <li className="nav__item">
-                            <LinkScroll to="hero" className="nav__link" onClick={closeMobileMenu} smooth={true} duration={500} spy={true} exact='true' offset={-80}>
+                            <HashLink to="/#hero" className="nav__link" onClick={closeMobileMenu} smooth={true} duration={500} spy="true" exact='true' offset={-80}>
                                 Home
-                            </LinkScroll>
+                            </HashLink>
                         </li>
 
                         <li className="nav__item">
-                            <LinkScroll to="about" className="nav__link" onClick={closeMobileMenu} smooth={true} duration={500} spy={true} exact='true' offset={-80}>
+                            <HashLink to="/#about" className="nav__link" onClick={closeMobileMenu} smooth={true} duration={500} spy="true" exact='true' offset={-80}>
                                 Services
-                            </LinkScroll>
+                            </HashLink>
                         </li>
 
                         <li className="nav__item">
-                            <LinkScroll to="contact" className="nav__link" onClick={closeMobileMenu} smooth={true} duration={500} spy={true} exact='true' offset={-80}>
+                            <HashLink to="/#contact" className="nav__link" onClick={closeMobileMenu} smooth={true} duration={500} spy="true" exact='true' offset={-80}>
                                 Contact
-                            </LinkScroll>
+                            </HashLink>
                         </li>
 
                         <li className="nav__item">
-                            <LinkScroll to="offers" className="nav__link" onClick={closeMobileMenu} smooth={true} duration={500} spy={true} exact='true' offset={-80}>
+                            <HashLink to="/#offers" className="nav__link" onClick={closeMobileMenu} smooth={true} duration={500} spy="true" exact='true' offset={-80}>
                                 Offers
-                            </LinkScroll>
+                            </HashLink>
                         </li>
 
                         <Link to="/form">
-                            <button className="nav__button"  onClick={closeMobileMenu}>Register</button>
+                            <button className="nav__button" onClick={closeMobileMenu}>Register</button>
                         </Link> 
                     </ul>
 

@@ -1,38 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import './Form.css';
 
 const Form = () => {    
 
-    const [ state, setState ] = useState('');
+    const [ name, setName ] = useState('');
+    const [ from, setFrom] = useState('');
+    const [ destination, setDestination ] = useState('');
 
-    const changeInput = (e) => {
-        setState(e.target.value);
+    const handleSumbit = (e) => {
+        //e.preventDefault();
     }
 
-    const handleSumbit = () => {
-        setState('');
-    }
+    const inputRef = useRef();
+
+    useEffect( () => {
+        inputRef.current.focus();
+    }, []);
 
     return(
         <React.Fragment>
-        <div className="hero__container">
+        <div className="hero__container" >
             <div className="hero__background">
             <div className="form__container--wrapper">
                 <h3>Please complete the information below to get more detalies</h3>
-                    <form name="travel-info" method="post">
+                    <form name="travel-info" method="post" onSubmit={handleSumbit}>
                         <input type="hidden" name="form-name" value="travel-info" />
                         <label>
                             Name 
-                            <input type="text" name="name" placeholder="Your name" required onChange={changeInput}/>
+                            <input ref={inputRef} onChange={e => { setName(e.target.value) }} value={name} type="text" name="name" placeholder="Your name" required/>
                         </label>
                         <label>
                             From
-                            <input type="text" name="origin" placeholder="Your departure city" required onChange={changeInput}/>
+                            <input onChange={e => { setFrom(e.target.value) }} value={from} type="text" name="origin" placeholder="Your departure city" required/>
                         </label>
                         <label>
                             Destination
-                            <input type="text" name="destination" placeholder="Your destination" required onChange={changeInput}/>
+                            <input onChange={e => { setDestination(e.target.value) }} value={destination} type="text" name="destination" placeholder="Your destination" required/>
                         </label>
                         <label>
                             From date
@@ -44,7 +48,7 @@ const Form = () => {
                         </label>
                         <button  className="hero__register--btn" 
                                 style={{width: '120px', marginLeft: '20px'}}
-                                type="submit" onSubmit={handleSumbit}>Submit</button>
+                                type="submit">Submit</button>
                     </form>
                 
             </div>

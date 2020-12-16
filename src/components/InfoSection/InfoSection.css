@@ -7,8 +7,6 @@
 }
 
 .info__row {
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
@@ -17,10 +15,6 @@
 .col {
     flex: inline-block;
     justify-content: center;
-    align-self: center;
-    /* flex: 1;
-    flex-basis: 100%;
-    max-width: 100%;    */
 }
 
 .info__col1 {
@@ -29,7 +23,7 @@
 }
 
 .info__col2 {
-    max-width: 500px;
+    max-width: 600px;
     padding: 50px 30px;
 }
 
@@ -38,7 +32,6 @@
 }
 
 .info__img {
-    
     background-size: cover;
     align-items: center;
     justify-content: center;
@@ -72,4 +65,8 @@
 li {
     font-size: 20px;
     margin-bottom: 1.2rem;
+}
+
+@media screen and (max-width: 960px) {
+
 }

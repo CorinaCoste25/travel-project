@@ -1,5 +1,4 @@
 import React, { useState, useEffect} from 'react';
-import { animateScroll as scroll } from 'react-scroll';
 
 import CardItem from '../CardItem';
 
@@ -20,13 +19,9 @@ const Offers = () => {
         setData(myData);
     }
 
-    const scrollToTop = () => {
-        scroll.scrollToTop();
-    };
-
     return (
         <React.Fragment>
-            <div className="offers__container" id="offers" onClick={scrollToTop}>
+            <div className="offers__container" id="offers" >
             <h1>Our offers for travelling lovers</h1>
                 <div className="offers__container--wrapper">
                     { data.map(card => {
