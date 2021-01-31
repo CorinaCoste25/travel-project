@@ -53,7 +53,7 @@ const Navbar = () => {
         <IconContext.Provider value={{color: 'var(--primaryColor)'}} >
             <nav className="nav__main" >
                 <div className="nav__container" onClick={scrollToTop}>
-                    <Link to="/" className="nav__logo" onClick={closeMobileMenu}>
+                    <Link to="/" className="nav__logo"  onClick={closeMobileMenu}>
                         Travel
                         <MdAirplanemodeActive size={32}/>
                     </Link>

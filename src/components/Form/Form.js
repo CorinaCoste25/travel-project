@@ -4,14 +4,27 @@ import './Form.css';
 
 const Form = () => {    
 
-    const [ name, setName ] = useState('');
+    const [ personName, setPersonName ] = useState('');
     const [ from, setFrom] = useState('');
     const [ destination, setDestination ] = useState('');
 
-    const handleSumbit = (e) => {
-        setName(e.target.name);
+    const inputNameHandle = (e) => {
+        setPersonName(e.target.personName);
+    }
+
+    const inputFromHandle = (e) => {
         setFrom(e.target.from);
+    }
+
+    const inputDestinationHandle = (e) => {
         setDestination(e.target.destination);
+    }
+
+    const handleSumbit = (e) => {
+        e.preventDefault();
+        setPersonName("");
+        setFrom("");
+        setDestination("");
     }
 
     const inputRef = useRef();
@@ -30,15 +43,15 @@ const Form = () => {
                         <input type="hidden" method="post" name="form-name" value="travel-info" />
                         <label>
                             Name 
-                            <input ref={inputRef} onChange={e => { setName(e.target.value) }} value={name} type="text" name="name" placeholder="Your name" required/>
+                            <input ref={inputRef} onChange={inputNameHandle} value={personName} type="text" placeholder="Your name" required/>
                         </label>
                         <label>
                             From
-                            <input onChange={e => { setFrom(e.target.value) }} value={from} type="text" name="origin" placeholder="Your departure city" required/>
+                            <input onChange={inputFromHandle} value={from} type="text" placeholder="Your departure city" required/>
                         </label>
                         <label>
                             Destination
-                            <input onChange={e => { setDestination(e.target.value) }} value={destination} type="text" name="destination" placeholder="Your destination" required/>
+                            <input onChange={inputDestinationHandle} value={destination} type="text" placeholder="Your destination" required/>
                         </label>
                         <label>
                             From date
@@ -50,7 +63,7 @@ const Form = () => {
                         </label>
                         <button  className="hero__register--btn" 
                                 style={{width: '120px', marginLeft: '20px'}}
-                                type="submit" onSubmit={handleSumbit}>Submit</button>
+                                type="submit" onClick={handleSumbit}>Submit</button>
                     </form>
                 
             </div>
